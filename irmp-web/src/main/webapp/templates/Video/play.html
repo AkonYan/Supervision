@@ -5,22 +5,22 @@
 </head>
 
 <body>
-    <div class="widget" style="width: 400px; margin: 0px 10px 10px 10px; float: left;">
+    <div class="widget" style="width: 600px; margin: 0px 10px 10px 10px; float: left;">
         <link href="/css/video.css" rel="stylesheet" type="text/css">
         <link href="/css/bootstrap/css/hik-bootstrap.css" rel="stylesheet" type="text/css">
         <link href="/css/bootstrap/css/hik-bootstrap.css" rel="stylesheet" type="text/css">
 
         <div class="widget-head"></div>
-        <div class="widget-content" style="height: 310px;">
+        <div class="widget-content" style="height: 330px;">
             <!--监控区域-->
             <div id="monitorArea">
 
-                <span id = "regsvrip" th:utext="${channel}"></span>
-             <!--   <span id = "regsvrport" th:utext="${channel.registerinfo.wanport}"></span>
-                <span id = "strsvrip" th:utext="${channel.streaminfo.wanip}"></span>
-                <span id= "strsvrport" th:utext="${channel.streaminfo.wanport}"></span>
-                <span id= "channelcode" th:utext="${channel.channelcode}"></span>
--->
+                <span id = "regsvrip" th:utext="${channel.registerinfo.wanip}" style="display:none"></span>
+               <span id = "regsvrport" th:utext="${channel.registerinfo.wanport}" style="display:none"></span>
+                <span id = "strsvrip" th:utext="${channel.streaminfo.wanip}" style="display:none"></span>
+                <span id= "strsvrport" th:utext="${channel.streaminfo.wanport}" style="display:none"></span>
+                <span id= "channelcode" th:utext="${channel.channelcode}" style="display:none"></span>
+
                 <div id="playwindow" style="text-align: center; background-color: #000; width: 100%;">
                     <object classid="clsid:942D7F59-8377-4D21-BD39-AF446986AF5F" id="ppvs" width="100%" height="100%" name="ppvs"></object>
                 </div>
@@ -51,17 +51,20 @@
       function StartVideo() {
           var ocx = document.getElementById("ppvs");
 
-          var channel  =   '<%=request.getAttribute("channel")%>';
-
-          var elevCode = '${channel.channelcode}' ;
-          regSvrIp = '${channel.registerinfo.wanip}';
-          regSvrPort = '${channel.registerinfo.wanport}';
-          streamSvrIp = '${channel.streaminfo.wanip}';
-          streamSvrPort = '${channel.streaminfo.wanport}';
+          var elevCode =   $("#channelcode")[0].innerText;
+          regSvrIp =  $("#regsvrip")[0].innerText;;
+          regSvrPort =  $("#regsvrport")[0].innerText;;
+          streamSvrIp =  $("#strsvrip")[0].innerText;;
+          streamSvrPort =  $("#strsvrport")[0].innerText;;
 
           //ocx.StartVideo(streamSvrIp, streamSvrPort, regSvrIp, regSvrPort, elevCode, iServerRoute, iStreamCodeType, 0);
           ocx.playvideo(regSvrIp, regSvrPort,streamSvrIp, streamSvrPort,  elevCode, iServerRoute, iStreamCodeType, 0);
 
+      }
+
+      function StopVideo() {
+          var ocx = document.getElementById("ppvs");
+          ocx.stopvideo();
       }
   </script>
 

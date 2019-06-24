@@ -1,6 +1,8 @@
 var tbl;
 var file_index;
 var casetypelist;
+
+var videourl;
 $(function () {
 
     getSelectControl(refresh());
@@ -81,6 +83,19 @@ function refresh() {
     regCheckAll();
 }
 
+function  openwindow( url) {
+    layer.open({
+        type: 2,
+        title: false,
+        area: ['630px', '360px'],
+        shade: 0.8,
+        closeBtn: 0,
+        shadeClose: true,
+        content: videourl
+    });
+}
+
+
 function getData() {
     var option = { ID: "#tbDataList", sAjaxSource: "/gbdevice/selectPage" };
     option.aoColumns = [
@@ -113,8 +128,9 @@ function getData() {
             mRender: function (data, type, obj) {
                 var text =  "播放";
                 var color = "#FF9900";
-                var btn = "<a href='javascript:void(0);' url='" + "/Video/index/34020000001320000007 ' onclick='layer.operate.open(this);' style='color: " + color + "' title='" + text + "'>" + text + "</a>";
-                //var btn = "<a href='javascript:void(0);' url='" + "/Video/index/{{deviceid}} ' onclick='layer.operate.open(this);' style='color: " + color + "' title='" + text + "'>" + text + "</a>";
+                videourl = "/Video/index/34020000001320000007";
+               // var btn = "<a href='javascript:void(0);' url='" + "/Video/index/34020000001320000007 ' onclick='layer.operate.open(this);' style='color: " + color + "' title='" + text + "'>" + text + "</a>";
+                var btn = "<a href='javascript:void(0);' url='"+videourl +"'  onclick='openwindow( this );' style='color: " + color + "' title='" + text + "'>" + text + "</a>";
                return btn;
             },
 

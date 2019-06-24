@@ -13,10 +13,7 @@ import com.cethik.irmp.util.DataTablesResult;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.LinkedList;
@@ -48,9 +45,9 @@ public class ChannelController  extends BaseController {
 
          Channel channel = channelService.selectByCode( deviceid );
 
-         String result = JSON.toJSONString( channel );
-        // model.addAttribute("channel", result);
-         model.addAttribute("channel", "124.91.150.149");
+         //String result = JSON.toJSONString( channel );
+         model.addAttribute("channel", channel);
+         //model.addAttribute("channel", "124.91.150.149");
         return new ModelAndView("Video/play");
 
     }
