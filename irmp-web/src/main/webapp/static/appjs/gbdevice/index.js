@@ -93,15 +93,14 @@ function getData() {
         new columnCommon("name", "设备名称", {
             sClass: "limit"
         }),
-        new columnCommon("channelSum", "通道数", { sWidth: "60px" }),
+        new columnCommon("channelsum", "通道数", { sWidth: "60px" }),
         new columnCommon("ip", "出口IP",{
             sClass: "limit"
         }),
         //new columnCommon("CabinetNum", "设备编号", { sWidth: "60px" }),
         // new columnCommon("Brand", "犯罪嫌疑人", { bVisible: false }),
         new columnCommon("port", "出口端口", {
-            sWidth: "60px",
-            sClass: "limit"
+            sWidth: "60px"
             //bVisible: false
         }),
         new columnCommon("createtime", "新增时间", {
@@ -110,13 +109,15 @@ function getData() {
             },
             sWidth: "130px"
         }),
-        new columnCommon("id", "操作", {
+        new columnCommon("gbcode", "操作", {
             mRender: function (data, type, obj) {
-               "查询通道"
-                "#FF9900"
-                var btn = "<a href='javascript:void(0);' url='" + "/Channel/selectPage" + data + "' onclick='layer.operate.open(this);' style='color: " + color + "' title='" + text + "'>" + text + "</a>";
-                return btn;
+                var text =  "播放";
+                var color = "#FF9900";
+                var btn = "<a href='javascript:void(0);' url='" + "/Video/index/34020000001320000007 ' onclick='layer.operate.open(this);' style='color: " + color + "' title='" + text + "'>" + text + "</a>";
+                //var btn = "<a href='javascript:void(0);' url='" + "/Video/index/{{deviceid}} ' onclick='layer.operate.open(this);' style='color: " + color + "' title='" + text + "'>" + text + "</a>";
+               return btn;
             },
+
             bSortable: false,
             sWidth: "70px"
         })
@@ -124,7 +125,7 @@ function getData() {
 
     option.bAutoWidth = true;
     option.fnServerParams = prepareFilterParam();
-    option.sGroups = [{ Name: "国标设备信息", Columns: "gbcode, name,channelSum,IP,port,createtime" }];
+    option.sGroups = [{ Name: "国标设备信息", Columns: "id, gbcode, name,channel_sum, ip, port, createtime" }];
     tbl = new dataTableInit(option);
 
 }

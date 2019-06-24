@@ -4,6 +4,7 @@
 
 package com.cethik.irmp.service;
 
+import com.cethik.irmp.IService.ISystemlogService;
 import com.cethik.irmp.mapper.SystemlogMapper;
 import com.cethik.irmp.model.Systemlog;
 import com.github.pagehelper.PageHelper;
@@ -21,7 +22,7 @@ import java.util.List;
  * @date 2018-12-05
  */
 @Service
-public class SystemlogService extends BaseService {
+public class SystemlogService extends BaseService implements ISystemlogService {
     private final static Logger log = LoggerFactory.getLogger(SystemlogService.class);
 
     @Autowired

@@ -8,6 +8,7 @@ import com.cethik.irmp.model.DictionaryData;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * DictionaryData mapper-JZGL
@@ -18,4 +19,5 @@ import java.util.List;
 @Mapper
 public interface DictionaryDataMapper extends BaseMapper<DictionaryData> {
     List<DictionaryData> selectAll();
+    List<Map<String, Object>> QueryDictionDataList(List id);
 }

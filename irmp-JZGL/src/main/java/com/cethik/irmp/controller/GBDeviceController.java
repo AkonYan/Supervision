@@ -27,7 +27,7 @@ public class GBDeviceController extends BaseController {
         int pageNum=getPageNum(request);
         int iDisplayLength=getiDisplayLength(request);
         List<GBDevice> list = GbdeviceService.selectListByPage(pageNum,iDisplayLength);
-        DataTablesResult<Caseinfo> result = new DataTablesResult(list);
+        DataTablesResult<GBDevice> result = new DataTablesResult(list);
         result.setsEcho(sEcho);
         return BaseResponse.buildSuccessResponse(result);
     }

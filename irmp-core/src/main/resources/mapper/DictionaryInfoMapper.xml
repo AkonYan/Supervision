@@ -16,4 +16,10 @@
         from dictionaryinfo d
         where code = #{code,jdbcType=VARCHAR}
     </select>
+    <select id="QueryDictionDataList" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        select i.id as typeid,d.value as id,null as name,d.name as text,null as code from dictionaryinfo i left join dictionarydata d on(d.dictionaryid=i.id) where i.id in
+        <foreach collection="list" open="(" close=")" separator="," item="item" index="index">
+            #{item}
+        </foreach>
+    </select>
 </mapper>

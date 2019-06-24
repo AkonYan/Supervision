@@ -1,5 +1,6 @@
 package com.cethik.irmp.controller;
 
+import com.cethik.irmp.IService.IAreaService;
 import com.cethik.irmp.config.AuthRealm;
 import com.cethik.irmp.dto.BaseResponse;
 import com.cethik.irmp.helper.LogHelper;
@@ -35,7 +36,7 @@ import java.util.List;
 public class AreaController extends BaseController {
 
     @Autowired
-    AreaService areaService;
+    IAreaService areaService;
 
     @Autowired
     AuthRealm authRealm;

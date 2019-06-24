@@ -1,6 +1,8 @@
 package com.cethik.irmp.controller;
 
 import com.alibaba.fastjson.JSONObject;
+import com.cethik.irmp.IService.ICorpService;
+import com.cethik.irmp.IService.IDictionaryInfoService;
 import com.cethik.irmp.config.AuthRealm;
 import com.cethik.irmp.dto.BaseResponse;
 import com.cethik.irmp.helper.SelectDataHelper;
@@ -28,11 +30,11 @@ import java.util.List;
 public class PublicController extends BaseController {
 
     @Autowired
-    DictionaryInfoService dictionaryInfoService;
+    IDictionaryInfoService dictionaryInfoService;
 
 
     @Autowired
-    CorpService corpService;
+    ICorpService corpService;
 
     @Autowired
     AuthRealm authRealm;

@@ -1,5 +1,6 @@
 package com.cethik.irmp.controller;
 
+import com.cethik.irmp.IService.ISystemlogService;
 import com.cethik.irmp.config.AuthRealm;
 import com.cethik.irmp.dto.BaseResponse;
 import com.cethik.irmp.model.Systemlog;
@@ -28,7 +29,7 @@ import java.util.List;
 public class SystemlogController extends BaseController {
 
     @Autowired
-    SystemlogService systemlogService;
+    ISystemlogService systemlogService;
 
     @Autowired
     AuthRealm authRealm;

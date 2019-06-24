@@ -1,5 +1,8 @@
 package com.cethik.irmp.controller;
 
+import com.cethik.irmp.IService.IProgService;
+import com.cethik.irmp.IService.IRoleService;
+import com.cethik.irmp.IService.IUserService;
 import com.cethik.irmp.dto.BaseResponse;
 import com.cethik.irmp.model.Prog;
 import com.cethik.irmp.model.Role;
@@ -36,13 +39,13 @@ public class RoleController extends BaseController {
             .getLogger(RoleController.class);
 
     @Autowired
-    private RoleService roleService;
+    private IRoleService roleService;
 
     @Autowired
-    private UserService userService;
+    private IUserService userService;
 
     @Autowired
-    private ProgService progService;
+    private IProgService progService;
 
     @RequestMapping(value = "/getRoleList", method = RequestMethod.GET)
     public BaseResponse<?> getRoleList(Integer pid) {

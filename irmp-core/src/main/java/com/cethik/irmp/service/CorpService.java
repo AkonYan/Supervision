@@ -4,6 +4,7 @@
 
 package com.cethik.irmp.service;
 
+import com.cethik.irmp.IService.ICorpService;
 import com.cethik.irmp.mapper.CorpMapper;
 import com.cethik.irmp.model.Corp;
 import com.github.pagehelper.PageHelper;
@@ -21,7 +22,7 @@ import java.util.List;
  * @date 2018-08-31
  */
 @Service
-public class CorpService extends BaseService {
+public class CorpService extends BaseService implements ICorpService {
     private final static Logger log = LoggerFactory.getLogger(CorpService.class);
 
     @Autowired

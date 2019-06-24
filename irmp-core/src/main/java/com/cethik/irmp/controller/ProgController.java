@@ -1,6 +1,8 @@
 package com.cethik.irmp.controller;
 
 import com.alibaba.fastjson.JSON;
+import com.cethik.irmp.IService.IProgService;
+import com.cethik.irmp.IService.IRoleService;
 import com.cethik.irmp.dto.BaseResponse;
 import com.cethik.irmp.model.Prog;
 import com.cethik.irmp.model.Role;
@@ -36,10 +38,10 @@ public class ProgController extends BaseController {
 
 
     @Autowired
-    private ProgService progService;
+    private IProgService progService;
 
     @Autowired
-    private RoleService roleService;
+    private IRoleService roleService;
 
     @RequestMapping(value = "/getMenu", method = RequestMethod.GET)
     public BaseResponse<?> getMenu() throws Throwable {

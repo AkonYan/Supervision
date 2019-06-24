@@ -4,19 +4,23 @@ import java.util.Date;
 
 public class GBDevice {
 
-    private Integer     ID;
-    private String      gbcode;
+    private Integer    id;
+    private String     gbcode;
     private String     name;
-    private Integer     channelSum;
+    private Integer    channelsum;
     private String     ip;
-    private Integer     port;
+    private Integer    port;
     private String     creator;
-    private Date        createtime;
+    private Date       createtime;
+    private int        departid;
+    private String     departname;
+    private int        usedstatus;
 
-    public  Integer getID(){return ID;}
-    public void setID( Integer id){
-        this.ID = id;
+    public  Integer getId(){return id;}
+    public void setId( Integer id){
+        this.id = id;
     }
+
     public String getGbcode(){
         return gbcode;
     }
@@ -31,11 +35,11 @@ public class GBDevice {
         this.name = name;
     }
 
-    public Integer getChannelSum(){
-        return channelSum;
+    public Integer getChannelsum(){
+        return channelsum;
     }
-    public void setChannelSum( Integer sum){
-        this.channelSum = sum;
+    public void setChannelsum( Integer sum){
+        this.channelsum = sum;
     }
 
     public String getIp(){
@@ -51,6 +55,7 @@ public class GBDevice {
     public void setPort( Integer port){
         this.port = port;
     }
+
     public  String getCreator(){
         return creator;
     }
@@ -63,5 +68,26 @@ public class GBDevice {
     }
     public void setCreatetime(Date createtime){
         this.createtime = createtime;
+    }
+
+    public int getDepartid(){
+        return  departid;
+    }
+    public void setDepart_id( int departid){
+        this.departid = departid;
+    }
+
+    public String  getDepartname(){
+        return departname;
+    }
+    public void setDepartname( String departname){
+        this.departname = departname;
+    }
+
+    public int  getUsedstatus(){
+        return usedstatus;
+    }
+    public void setUsedstatus( int usedstatus){
+        this.usedstatus = usedstatus;
     }
 }

@@ -4,6 +4,7 @@
 
 package com.cethik.irmp.service;
 
+import com.cethik.irmp.IService.IProgService;
 import com.cethik.irmp.mapper.ProgMapper;
 import com.cethik.irmp.model.Prog;
 import com.cethik.irmp.vmodel.Nestable;
@@ -22,7 +23,7 @@ import java.util.List;
  * @date 2018-08-31
  */
 @Service
-public class ProgService extends BaseService  {
+public class ProgService extends BaseService  implements IProgService {
     private final static Logger log = LoggerFactory.getLogger(ProgService.class);
 
     @Autowired

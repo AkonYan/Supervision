@@ -1,5 +1,6 @@
 package com.cethik.irmp.controller;
 
+import com.cethik.irmp.IService.IUserService;
 import com.cethik.irmp.config.AuthRealm;
 import com.cethik.irmp.dto.BaseResponse;
 import com.cethik.irmp.model.UserInfo;
@@ -33,7 +34,7 @@ import java.util.List;
 public class UserController extends BaseController {
 
     @Autowired
-    UserService userService;
+    IUserService userService;
 
     @Autowired
     AuthRealm authRealm;

@@ -10,35 +10,29 @@
                 <tr>
                     <td colspan="2" class="control-label col-sm-1" style="width: 6%;"> <label for="AJMC">案件名称</label></td>
                     <td colspan="3" class="col-sm-1 form-control-static">
-                        <input class="form-control" data-val="true" data-val-required="&#39;案件编号&#39;必填" id="AJMC" name="AJMC" type="text" value="" /><span style="color:red">*</span>
+                        <input class="form-control" data-val="true" data-val-required="&#39;案件编号&#39;必填" id="AJMC" name="AJMC" type="text" value=""  style="width:80%"/><span style="color:red">*</span>
                         <span class="field-validation-valid" data-valmsg-for="AJMC" data-valmsg-replace="true"></span>
                     </td>
                     <td colspan="2" class="control-label col-sm-1"><label for="AJBH">案件编号</label></td>
                     <td colspan="3" class="col-sm-1 form-control-static">
-                        <input class="form-control" data-val="true" data-val-required="&#39;案件编号&#39;必填" id="AJBH" maxlength="20" minlength="20" name="AJBH" type="text" value="" /><span style="color:red">*</span>
+                        <input class="form-control" data-val="true" data-val-required="&#39;案件编号&#39;必填" id="AJBH" maxlength="20" minlength="20" name="AJBH" type="text" value=""  style="width:80%"/><span style="color:red">*</span>
                         <span class="field-validation-valid" data-valmsg-for="AJBH" data-valmsg-replace="true"></span>
                     </td>
                 </tr>
-
                 <tr>
                     <td colspan="2" class="control-label col-sm-1" style="width:5%;"><label for="AJLB">案件类别</label></td>
                     <td colspan="3" class="col-sm-1 form-control-static">
-                        <select id="selCaseType" style="width:95%"></select><span style="color:red">*</span>
+                        <select id="selCaseType" style="width:80%"></select><span style="color:red">*</span>
                         <input type="hidden" id="AJLB" name="AJLB" />
                         <input type="hidden" id="AJLBMC" name="AJLBMC" />
                         <span class="field-validation-valid" data-valmsg-for="AJLB" data-valmsg-replace="true"></span>
                     </td>
                     <td colspan="2" class="control-label col-sm-1"><label for="AJZT">案件状态</label></td>
                     <td colspan="3" class="col-sm-1 form-control-static">
-                        <select id="selAJZT" name="selAJZT" style="width:90%"></select><span style="color:red">*</span>
+                        <select id="selAJZT" name="selAJZT" style="width:80%"></select><span style="color:red">*</span>
                         <span class="field-validation-valid" data-valmsg-for="AJZT" data-valmsg-replace="true"></span>
                         <input type="hidden" id="AJZT" name="AJZT" />
                     </td>
-<!--                    <td class="control-label col-sm-1" style="width:6%;"><label for="AJFAB">案件副案别</label></td>
-                    <td colspan="3" class="col-sm-1 form-control-static">
-                        <select id="selAJFAB"></select>
-                        <input type="hidden" id="AJFAB" name="AJFAB" />
-                    </td>-->
                 </tr>
                 <tr>
                     <td colspan="2" class="control-label col-sm-1"><label for="LASJDate">立案时间</label></td>
@@ -67,7 +61,6 @@
                 </tr>
 
                 <tr>
-
                     <td colspan="2" class="control-label col-sm-1"><label for="ZBRYMC">主办人员</label></td>
                     <td colspan="3" class="col-sm-1 form-control-static">
                         <select id="selZBRYID" style="width:80%"></select><span style="color:red">*</span>
@@ -241,7 +234,7 @@
     </div>
 </div>
 <div th:include="layoutlist::footer"></div>
-<!--<script src="/static/appjs/common/getdata.js"></script>
-<script src="/static/appjs/casereadwritetag/index.js"></script>-->
+<script src="/static/appjs/casereadwritetag/create.js"></script>
+<!--<script src="/static/appjs/casereadwritetag/index.js"></script>-->
 </body>
 </html>

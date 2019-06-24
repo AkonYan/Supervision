@@ -7,6 +7,7 @@ package com.cethik.irmp.service;
 import com.cethik.irmp.annotition.CetcLog;
 import com.cethik.irmp.aspect.OPERATE;
 import com.cethik.irmp.mapper.CaseinfoMapper;
+import com.cethik.irmp.mapper.DictionaryDataMapper;
 import com.cethik.irmp.model.Caseinfo;
 import com.github.pagehelper.PageHelper;
 import org.slf4j.Logger;
@@ -30,6 +31,9 @@ public class CaseinfoService extends BaseService {
 
     @Autowired
     private CaseinfoMapper mapper;
+
+    @Autowired
+    private DictionaryDataMapper dictionaryDataMapper;
 
     public void create(Caseinfo model) throws Exception {
         try {
@@ -75,9 +79,5 @@ public class CaseinfoService extends BaseService {
         List<Caseinfo> list = mapper.selectAll();
         return list;
     }
-    @CetcLog(type= OPERATE.QUERY,info="查询所有的列表")
-    public List QueryDictionDataList(){
-        List<Caseinfo> list = mapper.selectAll();
-        return list;
-    }
+
 }

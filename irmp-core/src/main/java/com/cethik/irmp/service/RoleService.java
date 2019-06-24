@@ -4,6 +4,7 @@
 
 package com.cethik.irmp.service;
 
+import com.cethik.irmp.IService.IRoleService;
 import com.cethik.irmp.mapper.RoleMapper;
 import com.cethik.irmp.model.Role;
 import org.slf4j.Logger;
@@ -20,7 +21,7 @@ import java.util.List;
  * @date 2018-08-31
  */
 @Service
-public class RoleService extends BaseService  {
+public class RoleService extends BaseService  implements IRoleService {
     private final static Logger log = LoggerFactory.getLogger(RoleService.class);
 
     @Autowired

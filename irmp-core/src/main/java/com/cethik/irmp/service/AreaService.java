@@ -1,5 +1,6 @@
 package com.cethik.irmp.service;
 
+import com.cethik.irmp.IService.IAreaService;
 import com.cethik.irmp.mapper.AreaMapper;
 import com.cethik.irmp.model.Area;
 import com.github.pagehelper.PageHelper;
@@ -18,7 +19,7 @@ import java.util.List;
  */
 
 @Service
-public class AreaService extends BaseService {
+public class AreaService extends BaseService implements IAreaService {
     private final static Logger log = LoggerFactory.getLogger(AreaService.class);
 
     @Autowired

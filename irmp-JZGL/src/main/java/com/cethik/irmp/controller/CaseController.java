@@ -45,10 +45,10 @@ public class CaseController extends BaseController {
         return BaseResponse.buildSuccessResponse(result);
     }
 
-    @RequestMapping(value = "/CaseReadWriteTag/QueryDictionDataList")
+/*    @RequestMapping(value = "/CaseReadWriteTag/QueryDictionDataList")
     public BaseResponse<?> QueryDictionDataList(HttpServletRequest request) {
         List<Caseinfo> list = caseinfoService.QueryDictionDataList();
         DataTablesResult<Caseinfo> result = new DataTablesResult(list);
         return BaseResponse.buildSuccessResponse(result);
-    }
+    }*/
 }

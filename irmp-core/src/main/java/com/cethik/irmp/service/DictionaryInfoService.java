@@ -4,6 +4,9 @@
 
 package com.cethik.irmp.service;
 
+import com.cethik.irmp.IService.IDictionaryInfoService;
+import com.cethik.irmp.annotition.CetcLog;
+import com.cethik.irmp.aspect.OPERATE;
 import com.cethik.irmp.mapper.DictionaryInfoMapper;
 import com.cethik.irmp.model.DictionaryInfo;
 import org.slf4j.Logger;
@@ -12,6 +15,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * DictionaryInfo service
@@ -20,7 +24,7 @@ import java.util.List;
  * @date 2018-08-31
  */
 @Service
-public class DictionaryInfoService extends BaseService {
+public class DictionaryInfoService extends BaseService implements IDictionaryInfoService {
     private final static Logger log = LoggerFactory.getLogger(DictionaryInfoService.class);
 
     @Autowired
@@ -33,4 +37,6 @@ public class DictionaryInfoService extends BaseService {
     public List<DictionaryInfo> selectByCode(String code) {
         return mapper.selectByCode(code);
     }
+
+
 }

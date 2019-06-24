@@ -4,6 +4,7 @@
 
 package com.cethik.irmp.service;
 
+import com.cethik.irmp.IService.IUserService;
 import com.cethik.irmp.mapper.UserMapper;
 import com.cethik.irmp.model.UserInfo;
 import com.cethik.irmp.vmodel.CurrentUser;
@@ -22,7 +23,7 @@ import java.util.List;
  * @date 2018-08-31
  */
 @Service
-public class UserService extends BaseService {
+public class UserService extends BaseService implements IUserService {
     private final static Logger log = LoggerFactory.getLogger(UserService.class);
 
     @Autowired
